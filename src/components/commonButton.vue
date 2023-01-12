@@ -1,9 +1,15 @@
 <template>
-    <div class="selectBox">
-        <span class="selectTop">SORT BY</span>
-        <select class="select">
-            <option value="">Decending Price</option>
-        </select>
+    <div class="button-group">
+        <div class="selectBox">
+            <span class="selectTop">SORT BY</span>
+            <select class="select">
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+            </select>
+        </div>
+        <div class="search">
+            <button>Search</button>
+        </div>
     </div>
 </template>
 
@@ -32,5 +38,20 @@ export default {
     border: 1px solid #5A5B6A;
     background: #ffff;
     padding: 7px;
+}
+
+.button-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+button{
+    border: 1px solid #9DC2FF;
+    padding: 7px;
+    color: #2264D1;
+    font-weight: bold;
+    background: #fff;
+    cursor: pointer;
 }
 </style>
