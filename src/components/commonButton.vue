@@ -8,15 +8,22 @@
             </select>
         </div>
         <div class="search">
-            <button>Search</button>
+            <button @click="getData">Search</button>
         </div>
     </div>
 </template>
 
 <script>
-export default {
+import { mapMutations } from 'vuex';
+export default{
 
-};
+ methods:{
+  ...mapMutations['getData']
+
+ } ,
+
+}
+
 </script>
 
 <style lang="scss">
