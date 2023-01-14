@@ -7,7 +7,7 @@
             <div class="subText">1258 bids, 359 watchers.</div>
             <div class="rating">
                 <div class="star">31</div>
-                <div class="watch">watch</div>
+                <button class="watch">watch</button>
             </div>
         </div>
         <div class="card">
@@ -17,7 +17,7 @@
             <div class="subText">1258 bids, 359 watchers.</div>
             <div class="rating">
                 <div class="star">31</div>
-                <div class="watch">watch</div>
+                <button class="watch">watch</button>
             </div>
         </div>
         <div class="card">
@@ -27,7 +27,7 @@
             <div class="subText">1258 bids, 359 watchers.</div>
             <div class="rating">
                 <div class="star">31</div>
-                <div class="watch">watch</div>
+                <button class="watch">watch</button>
             </div>
         </div>
     </div>
