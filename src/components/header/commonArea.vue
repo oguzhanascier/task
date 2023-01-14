@@ -14,9 +14,15 @@
                 </div>
             </div>
         </div>
+        <br>
+        <hr>
         <headerDirection />
     </header>
-    <commonButton/>
+
+    <div class="sort-search">
+        <commonButton />
+    </div>
+
 </template>
 
 <script>
@@ -24,11 +30,9 @@ import headerDirection from '../directions/headerDirection.vue';
 import commonButton from '../commonButton.vue';
 export default {
     components: { headerDirection, commonButton },
-    setup() {
-
-
-        return {}
-    }
+  created(){
+    console.log(this.$store.state.product);
+  }
 }
 </script>
 
@@ -67,5 +71,10 @@ header {
 span {
     font-size: 14px;
     margin-left: 6px;
+}
+
+.sort-search{
+    padding: 25px 59px;
+
 }
 </style>
