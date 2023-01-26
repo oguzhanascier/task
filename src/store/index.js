@@ -1,28 +1,34 @@
 import { createStore } from 'vuex'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default createStore({
   state: {
-    data: []
+    products: {},
+
   },
   getters: {
   },
   mutations: {
-    setData(state, data) {
-      state.data = data;
+    async setData(state, data) {
+      state.products = await data;
+      console.log(state.products);
     }
   },
   actions: {
-    async getData({ commit }) {
+    getData({ commit }) {
       try {
-        const response = await axios('data/db.json');
-        commit('setData', response.data);
+        fetch('/db.json').then(res => res.json()).then(response => {
+          // console.log(response.dataResult);
+          commit('setData', response.dataResult)
+        })
+        // context.state= response.dataResult
+        // commit('setData', response.dataResult);
       } catch (error) {
         console.log(error);
       }
     }
-  
+
   },
-modules: {
-}
+  modules: {
+  }
 })

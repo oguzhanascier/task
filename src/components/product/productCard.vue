@@ -1,40 +1,28 @@
 <template>
     <div class="cards">
-        <div class="card">
-            <img src="../../assets/Image.png" alt="">
-            <div class="title">MEN'S BETTER THAN NAKED - JACKET</div>
-            <div class="price">99.99</div>
-            <div class="subText">1258 bids, 359 watchers.</div>
+        <div class="card" v-for="product in products" :key="product.id">
+            <img :src="product.img" alt="">
+            <div class="title">{{ product.productTitle }}</div>
+            <div class="subText">{{ product.price }}</div>
             <div class="rating">
-                <div class="star">31</div>
+                <div class="star">{{ product.star }}</div>
                 <button class="watch">watch</button>
             </div>
         </div>
-        <div class="card">
-            <img src="../../assets/Image.png" alt="">
-            <div class="title">MEN'S BETTER THAN NAKED - JACKET</div>
-            <div class="price">99.99</div>
-            <div class="subText">1258 bids, 359 watchers.</div>
-            <div class="rating">
-                <div class="star">31</div>
-                <button class="watch">watch</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="../../assets/Image.png" alt="">
-            <div class="title">MEN'S BETTER THAN NAKED - JACKET</div>
-            <div class="price">99.99</div>
-            <div class="subText">1258 bids, 359 watchers.</div>
-            <div class="rating">
-                <div class="star">31</div>
-                <button class="watch">watch</button>
-            </div>
-        </div>
+
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
+    computed: {
+        ...mapState([
+            'products'
+        ])
+
+    },
 
 };
 </script>
@@ -51,8 +39,9 @@ $line-height: 25px;
 .card {
     display: flex;
     flex-direction: column;
-    width: 260px;
-    height: 473px;
+    position: relative;
+    width: 250px;
+    height: 300px;
     padding: 16px;
     font-family: 'Inter', sans-serif;
 }
@@ -63,6 +52,12 @@ img {}
     font-size: 16px;
     font-weight: regular;
     line-height: $line-height;
+    overflow: hidden;
+    white-space: nowrap;
+    /* Don't forget this one */
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+
 }
 
 .price {
@@ -82,7 +77,12 @@ img {}
 .rating {
     display: flex;
     justify-content: space-between;
-    line-height: $line-height;
+    align-items: center;
+    bottom: -20px;
 
 }
+
+.watch {}
+
+.star {}
 </style>

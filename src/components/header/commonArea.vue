@@ -28,11 +28,10 @@
 <script>
 import headerDirection from '../directions/headerDirection.vue';
 import commonButton from '../commonButton.vue';
+
 export default {
     components: { headerDirection, commonButton },
-  created(){
-    console.log(this.$store.state.product);
-  }
+   
 }
 </script>
 
